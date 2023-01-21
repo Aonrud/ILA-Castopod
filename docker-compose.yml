@@ -8,6 +8,7 @@ services:
       - castopod-media:/opt/castopod/public/media
       - ./ila_app:/opt/castopod/themes/cp_app
       - ./ila-media:/opt/castopod/public/media/ila
+      - ./Podcast.php:/opt/castopod/app/Language/en/Podcast.php
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
