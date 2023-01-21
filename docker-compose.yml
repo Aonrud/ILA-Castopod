@@ -75,7 +75,6 @@ volumes:
   castopod-media:
   castopod-db:
   castopod-cache:
-  castopod-theme:
   
 networks:
   castopod-app:
