@@ -3,7 +3,7 @@
     <div class="sticky z-10 bg-base top-12">
         <a href="<?= $podcast->feed_url ?>" class="inline-flex items-center mb-6 text-sm font-semibold focus:ring-accent text-skin-muted hover:text-skin-base group" target="_blank" rel="noopener noreferrer">
             <?= icon('rss', ' mr-2 bg-orange-500 text-xl text-white group-hover:bg-orange-700 p-1 w-6 h-6 inline-flex items-center justify-center rounded-lg') . lang('Podcast.feed') ?>
-        </a>
+        </a></li>
         <?php if (
             in_array(true, array_column($podcast->socialPlatforms, 'is_visible'), true)
         ): ?>
@@ -59,13 +59,21 @@
             <?php endforeach; ?>
         </div>
         <?php endif; ?>
+        
+        <section class="bg-elevated rounded p-3">
+            <header>
+                <h3 class="font-semibold text-xl">Irish Left Archive</h3>
+            </header>
+            <p class="my-2">The Irish Left Archive is an online archive of materials relating to Irish left politics, freely accessible and easy to download and reproduce.</p>
+            <div class="text-center"><Button variant="primary" uri="https://www.leftarchive.ie" iconRight="arrow-right">Irish Left Archive</Button></div>
+        </section>
+        
         <footer class="flex flex-col items-center py-2 text-xs text-center border-t border-subtle text-skin-muted">
-            <?= render_page_links('inline-flex mb-2 flex-wrap gap-y-1 justify-center') ?>
             <div class="flex flex-col">
                 <p><?= esc($podcast->copyright) ?></p>
                 <p><?= lang('Common.powered_by', [
                     'castopod' =>
-                        '<a class="inline-flex font-semibold text-skin-muted hover:underline focus:ring-accent" href="https://castopod.org" target="_blank" rel="noreferrer noopener">Castopod' . icon('castopod', 'ml-1 text-lg', 'social') . '</a>',
+                        '<a class="inline-flex font-semibold text-skin-muted hover:underline focus:ring-accent" href="https://castopod.org" target="_blank" rel="noreferrer noopener">Castopod' . icon('castopod', 'ml-1 text-lg', 'social') . '</a></li>',
                 ], null, false) ?></p>
             </div>
         </footer>
