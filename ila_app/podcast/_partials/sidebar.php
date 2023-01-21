@@ -60,12 +60,12 @@
         </div>
         <?php endif; ?>
         
-        <section class="bg-elevated rounded p-3">
+        <section class="bg-elevated">
             <header>
-                <h3 class="font-semibold text-xl">Irish Left Archive</h3>
+                <a href="https://www.leftarchive.ie" title="Visit the Irish Left Archive website"><img src="/media/ila/ILA_300.jpeg" alt="Irish Left Archive" /></a>
             </header>
-            <p class="my-2">The Irish Left Archive is an online archive of materials relating to Irish left politics, freely accessible and easy to download and reproduce.</p>
-            <div class="text-center"><Button variant="primary" uri="https://www.leftarchive.ie" iconRight="arrow-right">Irish Left Archive</Button></div>
+            <p class="my-4 mx-4">The Irish Left Archive is an online archive of materials relating to Irish left politics, freely accessible and easy to download and reproduce.</p>
+            <div class="text-center pb-4"><Button variant="primary" uri="https://www.leftarchive.ie" iconRight="arrow-right">Irish Left Archive</Button></div>
         </section>
         
         <footer class="flex flex-col items-center py-2 text-xs text-center border-t border-subtle text-skin-muted">
