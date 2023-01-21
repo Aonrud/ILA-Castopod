@@ -15,7 +15,7 @@ services:
       CP_ANALYTICS_SALT: ${CP_ANALYTICS_SALT}
       CP_CACHE_HANDLER: redis
       CP_REDIS_HOST: redis
-      CI_ENVIRONMENT: development
+      # CI_ENVIRONMENT: development
     networks:
       - castopod-app
       - castopod-db
