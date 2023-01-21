@@ -7,6 +7,7 @@ services:
     volumes:
       - castopod-media:/opt/castopod/public/media
       - ./ila_app:/opt/castopod/themes/cp_app
+      - ./ila-media:/opt/castopod/public/media/ila
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
