@@ -32,8 +32,8 @@ return [
     'stats' => [
         'title' => 'Stats',
         'number_of_seasons' => '{0, plural,
-            one {# season}
-            other {# seasons}
+            one {# series}
+            other {# series}
         }',
         'number_of_episodes' => '{0, plural,
             one {# episode}
