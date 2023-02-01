@@ -60,7 +60,7 @@
         </div>
         <?php endif; ?>
         
-        <section class="bg-elevated">
+        <section class="border">
             <header>
                 <a href="https://www.leftarchive.ie" title="Visit the Irish Left Archive website"><img src="/media/ila/ILA_300.jpeg" alt="Irish Left Archive" /></a>
             </header>
