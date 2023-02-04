@@ -39,7 +39,6 @@
     <div class="mt-6">
         <h2 class="text-xs font-bold tracking-wider text-gray-600 uppercase border-b-2 border-subtle font-display"><?= lang('Podcast.stats.title') ?></h2>
         <div class="flex flex-col text-sm">
-            <?php unset($stats["number_of_seasons"]) ?>
             <?php foreach ($stats as $key => $value) if ($value != 0): ?>
                 <span class="py-2 border-b border-subtle">
                     <?= lang('Podcast.about.stats.' . $key, [$value]) ?>
