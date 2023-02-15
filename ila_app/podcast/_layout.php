@@ -49,12 +49,6 @@
             <img src="<?= $podcast->cover->thumbnail_url ?>" alt="<?= esc($podcast->title) ?>" class="h-24 rounded-full sm:h-28 md:h-36 ring-3 ring-background-elevated aspect-square" loading="lazy" />
             <div class="relative flex flex-col text-white -top-3 sm:top-0 md:top-2">
                 <h1 class="text-lg font-bold leading-none line-clamp-2 md:leading-none md:text-2xl font-display"><?= esc($podcast->title) ?><span class="ml-1 font-sans text-base font-normal">@<?= esc($podcast->handle) ?></span></h1>
-                <div class="">
-                    <?= explicit_badge($podcast->parental_advisory === 'explicit', 'mr-1') ?>
-                    <span class="text-xs"><?= lang('Podcast.followers', [
-                        'numberOfFollowers' => $podcast->actor->followers_count,
-                    ]) ?></span>
-                </div>
             </div>
         </div>
         <div class="z-10 inline-flex items-center self-end mt-2 mr-2 sm:mb-4 sm:mr-4 gap-x-2">
