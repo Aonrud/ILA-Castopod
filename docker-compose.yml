@@ -14,7 +14,8 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      CP_BASEURL: "https://podcast.leftarchive.ie"
+      CP_BASEURL: ${CP_BASEURL}
+      CP_MEDIA_BASEURL: ${CP_MEDIA_BASEURL}
       CP_ANALYTICS_SALT: ${CP_ANALYTICS_SALT}
       CP_CACHE_HANDLER: redis
       CP_REDIS_HOST: redis
