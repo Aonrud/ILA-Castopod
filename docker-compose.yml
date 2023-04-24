@@ -42,7 +42,7 @@ services:
       - app
 
   mariadb:
-    image: mariadb:10.5
+    image: mariadb:10.11
     container_name: "castopod-mariadb"
     networks:
       - castopod-db
