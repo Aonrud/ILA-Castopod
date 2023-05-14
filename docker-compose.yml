@@ -78,8 +78,14 @@ services:
 
 volumes:
   castopod-media:
+    name: "castopod_castopod-media"
+    external: true
   castopod-db:
+    name: "castopod_castopod-db"
+    external: true
   castopod-cache:
+    name: "castopod_castopod-cache"
+    external: true
   
 networks:
   castopod-app:
