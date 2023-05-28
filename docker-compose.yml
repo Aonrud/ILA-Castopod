@@ -36,7 +36,7 @@ services:
     networks:
       - castopod-app
     ports:
-      - 8080:80
+      - 127.0.0.1:${PORT}:80
     restart: unless-stopped
     depends_on:
       - app
