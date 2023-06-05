@@ -68,6 +68,10 @@
         </section>
         
         <footer class="flex flex-col items-center py-2 text-xs text-center border-t border-subtle text-skin-muted">
+            <nav class="inline-flex mb-2 flex-wrap gap-y-1 justify-center">
+                <a href="<?= route_to('home') ?>" class="px-2 py-1 underline hover:no-underline focus:ring-accent">Home</a>
+                <a href="<?= route_to('credits') ?>" class="px-2 py-1 underline hover:no-underline focus:ring-accent">Credits</a>
+            </nav>
             <div class="flex flex-col">
                 <p><?= esc($podcast->copyright) ?></p>
                 <p><?= lang('Common.powered_by', [
