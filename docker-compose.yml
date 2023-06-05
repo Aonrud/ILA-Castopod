@@ -6,10 +6,12 @@ services:
     container_name: "castopod-app"
     volumes:
       - castopod-media:/opt/castopod/public/media
-      - ./ila_app:/opt/castopod/themes/cp_app
       - ./ila-media:/opt/castopod/public/media/ila
       - ./en/Podcast.php:/opt/castopod/app/Language/en/Podcast.php
       - ./en/Episode.php:/opt/castopod/app/Language/en/Episode.php
+      - ./cp_app/embed.php:/opt/castopod/themes/cp_app/embed.php
+      - ./cp_app/podcast/_layout.php:/opt/castopod/themes/cp_app/podcast/_layout.php
+      - ./cp_app/podcast/_partials/sidebar.php:/opt/castopod/themes/cp_app/podcast/_partials/sidebar.php
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
