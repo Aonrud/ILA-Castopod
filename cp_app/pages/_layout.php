@@ -10,6 +10,7 @@
     <link rel="apple-touch-icon" href="<?= get_site_icon_url('180') ?>">
     <link rel="manifest" href="<?= route_to('webmanifest') ?>">
     <meta name="theme-color" content="<?= \App\Controllers\WebmanifestController::THEME_COLORS[service('settings')->get('App.theme')]['theme'] ?>">
+    <script async src="https://u.leftarchive.ie/script.js" data-website-id="ec574407-6b92-4abe-9c64-b95baaf212b2"></script>
     <script>
     // Check that service workers are supported
     if ('serviceWorker' in navigator) {

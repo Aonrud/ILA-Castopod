@@ -11,6 +11,7 @@ services:
       - ./en/Episode.php:/opt/castopod/app/Language/en/Episode.php
       - ./cp_app/embed.php:/opt/castopod/themes/cp_app/embed.php
       - ./cp_app/pages/_layout.php:/opt/castopod/themes/cp_app/pages/_layout.php
+      - ./cp_app/episode/_layout.php:/opt/castopod/themes/cp_app/episode/_layout.php
       - ./cp_app/podcast/_layout.php:/opt/castopod/themes/cp_app/podcast/_layout.php
       - ./cp_app/podcast/_partials/sidebar.php:/opt/castopod/themes/cp_app/podcast/_partials/sidebar.php
     environment:
