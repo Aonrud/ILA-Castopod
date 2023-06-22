@@ -5,15 +5,15 @@ services:
     image: castopod/app:latest
     container_name: "castopod-app"
     volumes:
-      - castopod-media:/opt/castopod/public/media
-      - ./ila-media:/opt/castopod/public/media/ila
-      - ./en/Podcast.php:/opt/castopod/app/Language/en/Podcast.php
-      - ./en/Episode.php:/opt/castopod/app/Language/en/Episode.php
-      - ./cp_app/embed.php:/opt/castopod/themes/cp_app/embed.php
-      - ./cp_app/pages/_layout.php:/opt/castopod/themes/cp_app/pages/_layout.php
-      - ./cp_app/episode/_layout.php:/opt/castopod/themes/cp_app/episode/_layout.php
-      - ./cp_app/podcast/_layout.php:/opt/castopod/themes/cp_app/podcast/_layout.php
-      - ./cp_app/podcast/_partials/sidebar.php:/opt/castopod/themes/cp_app/podcast/_partials/sidebar.php
+      - castopod-media:/var/www/castopod/public/media
+      - ./ila-media:/var/www/castopod/public/media/ila
+      - ./en/Podcast.php:/var/www/castopod/app/Language/en/Podcast.php
+      - ./en/Episode.php:/var/www/castopod/app/Language/en/Episode.php
+      - ./cp_app/embed.php:/var/www/castopod/themes/cp_app/embed.php
+      - ./cp_app/pages/_layout.php:/var/www/castopod/themes/cp_app/pages/_layout.php
+      - ./cp_app/episode/_layout.php:/var/www/castopod/themes/cp_app/episode/_layout.php
+      - ./cp_app/podcast/_layout.php:/var/www/castopod/themes/cp_app/podcast/_layout.php
+      - ./cp_app/podcast/_partials/sidebar.php:/var/www/castopod/themes/cp_app/podcast/_partials/sidebar.php
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
@@ -66,19 +66,6 @@ services:
      - castopod-cache:/data
    networks:
      - castopod-app
-
-#  video-clipper:
-#    image: castopod/video-clipper:latest
-#    container_name: "castopod-video-clipper"
-#    volumes:
-#      - castopod-media:/opt/castopod/public/media
-#    environment:
-#      MYSQL_DATABASE: ${MYSQL_DATABASE}
-#      MYSQL_USER: ${MYSQL_USER}
-#      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-#    networks:
-#      - castopod-db
-#    restart: unless-stopped
 
 volumes:
   castopod-media:
