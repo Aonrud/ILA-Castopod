@@ -23,9 +23,6 @@
     <img src="<?= $episode->cover->thumbnail_url ?>" alt="<?= esc($episode->title) ?>" class="flex-shrink w-28 h-28 aspect-square" loading="lazy" />
     <div class="flex flex-col items-start flex-1 min-w-0 px-4 pt-4 h-28">
          <a href="https://podcast.leftarchive.ie/" class="absolute top-0 right-0 mt-1 mr-2 text-2xl hover:opacity-75" title="Irish Left Archive Podcast" target="_blank" rel="noopener noreferrer"><img src="<?= get_site_icon_url('64') ?>" class="w-10" alt="Irish Left Archive Podcast" /></a>
-        <a href="https://castopod.org/" class="absolute top-0 right-0 mt-1 mr-2 text-2xl text-pine-500 hover:opacity-75" title="<?= lang('Common.powered_by', [
-            'castopod' => 'Castopod',
-        ]) ?>" target="_blank" rel="noopener noreferrer"><?= icon('castopod', '', 'podcasting') ?></a>
         <div class="flex gap-x-2">
             <?= episode_numbering($episode->number, $episode->season_number, 'text-xs font-semibold !no-underline border px-1 border-gray-500', true) ?>
             <a href="<?= route_to('podcast-activity', esc($podcast->handle)) ?>" style="color: <?= $themeData['text'] ?>;" class="text-xs truncate opacity-75 hover:opacity-100" target="_blank" rel="noopener noreferrer"><?= esc($podcast->title) ?></a>
