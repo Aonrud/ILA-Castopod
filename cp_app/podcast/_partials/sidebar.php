@@ -21,11 +21,11 @@
                         $socialPlatform->type
                     ),
                     [
-                        'class' => 'text-2xl text-skin-muted hover:text-skin-base w-8 h-8 items-center inline-flex justify-center',
-                        'target' => '_blank',
-                        'rel' => 'noopener noreferrer',
+                        'class'        => 'text-2xl text-skin-muted hover:text-skin-base w-8 h-8 items-center inline-flex justify-center',
+                        'target'       => '_blank',
+                        'rel'          => 'noopener noreferrer',
                         'data-tooltip' => 'bottom',
-                        'title' => $socialPlatform->label,
+                        'title'        => $socialPlatform->label,
                     ],
                 ) ?>
             <?php endif; ?>
@@ -48,11 +48,11 @@
                             $podcastingPlatform->type
                         ),
                         [
-                            'class' => 'text-2xl text-skin-muted hover:text-skin-base w-8 h-8 items-center inline-flex justify-center',
-                            'target' => '_blank',
-                            'rel' => 'noopener noreferrer',
+                            'class'        => 'text-2xl text-skin-muted hover:text-skin-base w-8 h-8 items-center inline-flex justify-center',
+                            'target'       => '_blank',
+                            'rel'          => 'noopener noreferrer',
                             'data-tooltip' => 'bottom',
-                            'title' => $podcastingPlatform->label,
+                            'title'        => $podcastingPlatform->label,
                         ],
                     ) ?>
                 <?php endif; ?>
@@ -66,7 +66,6 @@
             <p class="my-4 mx-4">The Irish Left Archive is an online archive of materials relating to Irish left politics, freely accessible and easy to download and reproduce.</p>
             <div class="text-center pb-4"><Button variant="primary" uri="https://www.leftarchive.ie" iconRight="arrow-right">Irish Left Archive</Button></div>
         </section>
-        
         <footer class="flex flex-col items-center py-2 text-xs text-center border-t border-subtle text-skin-muted">
             <nav class="inline-flex mb-2 flex-wrap gap-y-1 justify-center">
                 <a href="<?= route_to('home') ?>" class="px-2 py-1 underline hover:no-underline focus:ring-accent">Home</a>
@@ -75,8 +74,7 @@
             <div class="flex flex-col">
                 <p><?= esc($podcast->copyright) ?></p>
                 <p><?= lang('Common.powered_by', [
-                                'castopod' =>
-                                    '<a class="inline-flex font-semibold text-skin-muted hover:underline focus:ring-accent" href="https://castopod.org" target="_blank" rel="noreferrer noopener">Castopod' . icon('castopod', 'ml-1 text-lg', 'social') . '</a>',
+                                'castopod' => '<a class="inline-flex font-semibold text-skin-muted hover:underline focus:ring-accent" href="https://castopod.org" target="_blank" rel="noreferrer noopener">Castopod' . icon('castopod', 'ml-1 text-lg', 'social') . '</a>',
                             ], null, false) ?></p>
             </div>
         </footer>

@@ -55,7 +55,7 @@
             <?php if (in_array(true, array_column($podcast->fundingPlatforms, 'is_visible'), true)): ?>
                 <button class="inline-flex items-center px-4 text-xs font-semibold leading-8 tracking-wider text-red-600 uppercase bg-white rounded-full shadow hover:text-red-500 focus:ring-accent" data-toggle="funding-links" data-toggle-class="hidden"><Icon glyph="heart" class="mr-2 text-sm"></Icon><?= lang('Podcast.sponsor') ?></button>
             <?php endif; ?>
-            <a href="<?= $podcast->feed_url ?>" target="_blank" class="group inline-flex items-center px-4 text-xs tracking-wider font-semibold text-black 
+            <a href="<?= $podcast->feed_url ?>" target="_blank" class="group inline-flex items-center px-4 text-xs tracking-wider font-semibold text-black
             uppercase rounded-full leading-8 shadow focus:ring-accent bg-white"><Icon glyph="rss" class="mr-2 text-sm"></Icon> Podcast Feed</a>
             <?= anchor_popup(
                 route_to('follow', esc($podcast->handle)),
@@ -64,10 +64,9 @@
                     'mr-2 text-xl text-black/75 group-hover:text-black',
                 ) . lang('Podcast.follow'),
                 [
-                    'width' => 420,
+                    'width'  => 420,
                     'height' => 620,
-                    'class' =>
-                        'group inline-flex items-center px-4 text-xs tracking-wider font-semibold text-black uppercase rounded-full leading-8 shadow focus:ring-accent bg-white',
+                    'class'  => 'group inline-flex items-center px-4 text-xs tracking-wider font-semibold text-black uppercase rounded-full leading-8 shadow focus:ring-accent bg-white',
                 ],
             ) ?>
         </div>

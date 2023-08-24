@@ -57,8 +57,7 @@
             <a href="<?= route_to('credits') ?>" class="px-2 py-1 underline hover:no-underline focus:ring-accent">Credits</a>
         </nav>
         <small><?= lang('Common.powered_by', [
-                'castopod' =>
-                    '<a class="underline hover:no-underline focus:ring-accent" href="https://castopod.org/" target="_blank" rel="noreferrer noopener">Castopod</a>',
+                'castopod' => '<a class="underline hover:no-underline focus:ring-accent" href="https://castopod.org/" target="_blank" rel="noreferrer noopener">Castopod</a>',
             ], null, false) ?></small>
     </footer>
 </body>
