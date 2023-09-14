@@ -28,6 +28,7 @@ services:
       CP_EMAIL_SMTP_USERNAME: ${CP_EMAIL_SMTP_USERNAME}
       CP_EMAIL_SMTP_PASSWORD: ${CP_EMAIL_SMTP_PASSWORD}
       CP_EMAIL_SMTP_PORT: ${CP_EMAIL_SMTP_PORT}
+      CP_REDIS_PASSWORD: ${REDIS_PASSWORD}
     networks:
       - castopod-app
       - castopod-db
@@ -70,6 +71,8 @@ services:
      - castopod-cache:/data
    networks:
      - castopod-app
+   command: >
+       --requirepass ${REDIS_PASSWORD}
 
 volumes:
   castopod-media:
