@@ -23,7 +23,11 @@ services:
       CP_ANALYTICS_SALT: ${CP_ANALYTICS_SALT}
       CP_CACHE_HANDLER: redis
       CP_REDIS_HOST: redis
-      # CI_ENVIRONMENT: development
+      CP_EMAIL_SMTP_HOST: ${CP_EMAIL_SMTP_HOST}
+      CP_EMAIL_FROM: ${CP_EMAIL_FROM}
+      CP_EMAIL_SMTP_USERNAME: ${CP_EMAIL_SMTP_USERNAME}
+      CP_EMAIL_SMTP_PASSWORD: ${CP_EMAIL_SMTP_PASSWORD}
+      CP_EMAIL_SMTP_PORT: ${CP_EMAIL_SMTP_PORT}
     networks:
       - castopod-app
       - castopod-db
