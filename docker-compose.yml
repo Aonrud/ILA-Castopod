@@ -82,8 +82,6 @@ volumes:
     name: "castopod_castopod-db"
     external: true
   castopod-cache:
-    name: "castopod_castopod-cache"
-    external: true
   
 networks:
   castopod-app:
