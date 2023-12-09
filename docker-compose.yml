@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   app:
-    image: castopod/app:latest
+    image: castopod/castopod:latest
     container_name: "castopod-app"
     volumes:
       - castopod-media:/var/www/castopod/public/media
@@ -35,20 +35,8 @@ services:
     restart: unless-stopped
     depends_on:
       - mariadb
-
-  web-server:
-    image: castopod/web-server:latest
-    container_name: "castopod-web-server"
-    volumes:
-      - castopod-media:/var/www/html/media
-      - ./ila-media:/var/www/html/media/ila
-    networks:
-      - castopod-app
     ports:
-      - 127.0.0.1:${PORT}:80
-    restart: unless-stopped
-    depends_on:
-      - app
+      - 127.0.0.1:${PORT}:8000
 
   mariadb:
     image: mariadb:10.11
@@ -71,8 +59,7 @@ services:
      - castopod-cache:/data
    networks:
      - castopod-app
-   command: >
-       --requirepass ${REDIS_PASSWORD}
+   command: --requirepass ${REDIS_PASSWORD}
 
 volumes:
   castopod-media:
