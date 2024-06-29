@@ -11,7 +11,6 @@
     <link rel="apple-touch-icon" href="<?= get_site_icon_url('180') ?>">
     <link rel="manifest" href="<?= route_to('podcast-webmanifest', esc($podcast->handle)) ?>">
     <meta name="theme-color" content="<?= \App\Controllers\WebmanifestController::THEME_COLORS[service('settings')->get('App.theme')]['theme'] ?>">
-    <script async src="https://u.leftarchive.ie/script.js" data-website-id="ec574407-6b92-4abe-9c64-b95baaf212b2"></script>
     <script>
     // Check that service workers are supported
     if ('serviceWorker' in navigator) {
@@ -47,25 +46,33 @@
         <a href="<?= route_to('podcast-episodes', esc($podcast->handle)) ?>" class="flex items-center h-full min-w-0 px-2 gap-x-2 focus:ring-accent focus:ring-inset" title="<?= lang('Episode.back_to_episodes', [
             'podcast' => esc($podcast->title),
         ]) ?>">
-            <?= icon('arrow-left', 'text-lg flex-shrink-0') ?>
+            <?= icon('arrow-left-line', [
+                'class' => 'text-lg flex-shrink-0',
+            ]) ?>
             <div class="flex items-center min-w-0 gap-x-2">
                 <img class="w-8 h-8 rounded-full" src="<?= $episode->podcast->cover->tiny_url ?>" alt="<?= esc($episode->podcast->title) ?>" loading="lazy" />
                 <div class="flex flex-col overflow-hidden">
                     <span class="text-sm font-semibold leading-none truncate"><?= esc($episode->podcast->title) ?></span>
+                    <span class="text-xs"><?= lang('Podcast.followers', [
+                        'numberOfFollowers' => $podcast->actor->followers_count,
+                    ]) ?></span>
                 </div>
             </div>
         </a>
         <div class="inline-flex items-center self-end h-full px-2 gap-x-2">
             <?php if (in_array(true, array_column($podcast->fundingPlatforms, 'is_visible'), true)): ?>
-                <button class="p-2 text-red-600 bg-white rounded-full shadow hover:text-red-500 focus:ring-accent" data-toggle="funding-links" data-toggle-class="hidden" title="<?= lang('Podcast.sponsor') ?>"><Icon glyph="heart"></Icon></button>
+                <button class="p-2 text-red-600 bg-white rounded-full shadow hover:text-red-500 focus:ring-accent" data-toggle="funding-links" data-toggle-class="hidden" title="<?= lang('Podcast.sponsor') ?>"><?= icon('heart-fill') ?></button>
             <?php endif; ?>
-            <a href="<?= $podcast->feed_url ?>" target="_blank" class="group inline-flex items-center px-4 text-xs tracking-wider font-semibold text-black
-            uppercase rounded-full leading-8 shadow focus:ring-accent bg-white"><Icon glyph="rss" class="mr-2 text-sm"></Icon> Podcast Feed</a>
+            <a href="<?= $podcast->feed_url ?>" target="_blank" class="group inline-flex items-center px-4 text-xs tracking-wider font-semibold text-black uppercase rounded-full leading-8 shadow focus:ring-accent bg-white">
+                <?= icon('rss-fill', [ 'class' => ' mr-2 text-sm', ]) . lang('Podcast.feed') ?>
+            </a>
             <?= anchor_popup(
                 route_to('follow', esc($podcast->handle)),
                 icon(
-                    'social/castopod',
-                    'mr-2 text-xl text-black/75 group-hover:text-black',
+                    'social:castopod',
+                    [
+                        'class' => 'mr-2 text-xl text-black/75 group-hover:text-black',
+                    ],
                 ) . lang('Podcast.follow'),
                 [
                     'width'  => 420,
@@ -82,7 +89,9 @@
             <div class="relative flex-shrink-0">
                 <?= explicit_badge($episode->parental_advisory === 'explicit', 'rounded absolute left-0 bottom-0 ml-2 mb-2 bg-black/75 text-accent-contrast') ?>
                 <?php if ($episode->is_premium): ?>
-                    <Icon glyph="exchange-dollar" class="absolute left-0 w-8 pl-2 text-2xl rounded-r-full rounded-tl-lg top-2 text-accent-contrast bg-accent-base" />
+                    <?= icon('exchange-dollar-fill', [
+                'class' => 'absolute left-0 w-8 pl-2 text-2xl rounded-r-full rounded-tl-lg top-2 text-accent-contrast bg-accent-base',
+            ]) ?>
                 <?php endif; ?>
                 <img src="<?= $episode->cover->medium_url ?>" alt="<?= esc($episode->title) ?>" class="flex-shrink-0 rounded-md shadow-xl h-36 aspect-square" loading="lazy" />
             </div>

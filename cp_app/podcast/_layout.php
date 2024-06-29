@@ -49,20 +49,29 @@
             <img src="<?= $podcast->cover->thumbnail_url ?>" alt="<?= esc($podcast->title) ?>" class="h-24 rounded-full sm:h-28 md:h-36 ring-3 ring-background-elevated aspect-square" loading="lazy" />
             <div class="relative flex flex-col text-white -top-3 sm:top-0 md:top-2">
                 <h1 class="text-lg font-bold leading-none line-clamp-2 md:leading-none md:text-2xl font-display"><?= esc($podcast->title) ?><span class="ml-1 font-sans text-base font-normal">@<?= esc($podcast->handle) ?></span></h1>
+                <div class="">
+                    <?= explicit_badge($podcast->parental_advisory === 'explicit', 'mr-1') ?>
+                    <span class="text-xs"><?= lang('Podcast.followers', [
+                        'numberOfFollowers' => $podcast->actor->followers_count,
+                    ]) ?></span>
+                </div>
             </div>
         </div>
         <div class="z-10 inline-flex items-center self-end mt-2 mr-2 sm:mb-4 sm:mr-4 gap-x-2">
             <?php if (in_array(true, array_column($podcast->fundingPlatforms, 'is_visible'), true)): ?>
-                <button class="inline-flex items-center px-4 text-xs font-semibold leading-8 tracking-wider text-red-600 uppercase bg-white rounded-full shadow hover:text-red-500 focus:ring-accent" data-toggle="funding-links" data-toggle-class="hidden"><Icon glyph="heart" class="mr-2 text-sm"></Icon><?= lang('Podcast.sponsor') ?></button>
+                <button class="inline-flex items-center px-4 text-xs font-semibold leading-8 tracking-wider text-red-600 uppercase bg-white rounded-full shadow hover:text-red-500 focus:ring-accent" data-toggle="funding-links" data-toggle-class="hidden"><?= icon('heart-fill', [
+                    'class' => 'mr-2 text-sm',
+                ]) ?><?= lang('Podcast.sponsor') ?></button>
             <?php endif; ?>
-            <a href="<?= $podcast->feed_url ?>" target="_blank" class="group inline-flex items-center px-4 text-xs tracking-wider font-semibold text-black
-            uppercase rounded-full leading-8 shadow focus:ring-accent bg-white"><Icon glyph="rss" class="mr-2 text-sm"></Icon> Podcast Feed</a>
+            <a href="<?= $podcast->feed_url ?>" target="_blank" class="group inline-flex items-center px-4 text-xs tracking-wider font-semibold text-black uppercase rounded-full leading-8 shadow focus:ring-accent bg-white">
+                <?= icon('rss-fill', [ 'class' => ' mr-2 text-sm', ]) . lang('Podcast.feed') ?>
+            </a>
             <?= anchor_popup(
                 route_to('follow', esc($podcast->handle)),
-                icon(
-                    'social/castopod',
-                    'mr-2 text-xl text-black/75 group-hover:text-black',
-                ) . lang('Podcast.follow'),
+                icon('social:castopod', [
+                    'class' => 'mr-2 text-xl text-black/75 group-hover:text-black',
+                ]) .
+                lang('Podcast.follow'),
                 [
                     'width'  => 420,
                     'height' => 620,
